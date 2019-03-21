@@ -1,3 +1,4 @@
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 
@@ -14,12 +15,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {MatSidenavModule, MatListModule} from '@angular/material';
+import { MatSidenavModule, MatListModule, MatTableModule } from '@angular/material';
 import { ManageReservationsComponent } from './manage-reservations/manage-reservations.component';
 import { CreateCarComponent } from './create-car/create-car.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+
 
 
 
@@ -42,6 +44,8 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
+    MatPaginatorModule,
     MatFormFieldModule,
     MatToolbarModule,
     MatIconModule,
