@@ -1,3 +1,8 @@
+I made this project for learning fullstack developement using MEAN stack.(MongoDB +  + Express + Anguluar + NodeJS)
+
+This app is hosted here :
+
+
 # Rent
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
