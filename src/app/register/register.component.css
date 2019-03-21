@@ -6,3 +6,8 @@ mat-card {
  mat-form-field {
      width: 100%;
  }
+
+ #registerButton {
+     background-color: red;
+     border-color: red;
+ }

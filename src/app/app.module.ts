@@ -15,13 +15,30 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule, MatListModule} from '@angular/material';
+import { ManageReservationsComponent } from './manage-reservations/manage-reservations.component';
+import { CreateCarComponent } from './create-car/create-car.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ManageReservationsComponent,
+    CreateCarComponent,
+    MainpageComponent,
+    DatepickerComponent,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +54,11 @@ import {MatSidenavModule, MatListModule} from '@angular/material';
     MatCardModule,
     RouterModule.forRoot([
       {path: '', component: LoginComponent},
-      {path: 'register', component : RegisterComponent}
-
+      {path: 'register', component : RegisterComponent},
+      {path: 'main', component: MainpageComponent},
+      {path: 'create-car', component: CreateCarComponent},
+      {path: 'manage', component: ManageReservationsComponent },
+      {path: 'users', component: AdminUsersComponent}
     ])
   ],
   providers: [],
