@@ -1,6 +1,10 @@
+
+<!-- This is the tool bar on top of the screen with login button and register -->
 <mat-toolbar color="primary" class="sticky-top">
+
   <mat-toolbar-row>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <!-- This is humburger menu button -->
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -17,3 +21,38 @@
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
+
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav>
+    <!-- This is left side side nav menu -->
+    <mat-nav-list>
+        
+        <a mat-list-item>
+          <mat-icon> calendar_today </mat-icon>
+          Manage Reservations
+        </a>
+
+        <a mat-list-item>
+            <mat-icon> drive_eta </mat-icon>
+            Add a Car 
+        </a>
+
+        <a mat-list-item>
+            <mat-icon> person_add_diabled </mat-icon>
+            My Users
+        </a>
+
+        <a mat-list-item>
+              <mat-icon> home </mat-icon>
+              Main Page 
+        </a>
+        
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- This is the main HTML element on the right side with router-->
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>

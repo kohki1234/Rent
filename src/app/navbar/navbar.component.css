@@ -10,3 +10,7 @@ a:hover {
     color: white;
     font-size: 15px;
 }
+
+mat-nav-list {
+    padding-top: 25px;;
+}
