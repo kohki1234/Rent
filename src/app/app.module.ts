@@ -21,6 +21,8 @@ import { CreateCarComponent } from './create-car/create-car.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { UserService } from './user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -43,6 +45,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     AdminUsersComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     MatTableModule,
     MatPaginatorModule,
@@ -65,7 +68,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
       {path: 'users', component: AdminUsersComponent}
     ])
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
