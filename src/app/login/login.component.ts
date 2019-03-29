@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -8,7 +9,16 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
 
+  constructor(private userservice: UserService) {
+
+  }
+
   onlogin(form: NgForm) {
-    console.log(form.value.email);
+    const email = form.value.email;
+    const password = form.value.password;
+
+    this.userservice.loginUser(email, password).subscribe(result => {
+      // do something...
+    });
   }
 }
