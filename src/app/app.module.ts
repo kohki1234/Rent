@@ -22,14 +22,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { UserService } from './user.service';
-import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
-
-
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 
 @NgModule({
