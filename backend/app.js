@@ -17,6 +17,9 @@ app.use(bodyparser.json());
 
 
 const userRoutes = require('./user');
-app.use('/api/user', userRoutes)
+const adminRoutes = require('./admin');
+
+app.use('/api/user', userRoutes);
+app.use('/api/admin', adminRoutes);
 
 module.exports = app;

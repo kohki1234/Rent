@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCarComponent implements OnInit {
 
-  constructor() { }
+  selectedFile: File = null;
+  fd = new FormData();
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+  }
+
+  onFileSelected(event) {
+  this.selectedFile = event.target.files[0] as File;
+  this.fd.append('file', this.selectedFile, this.selectedFile.name);
+
+  this.http.post('http://localhost:3000/api/admin/save-image', this.fd).subscribe(res => console.log(res));
+
   }
 
 }
