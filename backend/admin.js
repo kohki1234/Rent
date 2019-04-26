@@ -3,7 +3,7 @@ const cors = require('cors');
 const multer = require('multer');
 const router = express.Router();
 const Car = require('./models/car');
-
+const user = require('./models/user');
 
 
 const storage = multer.diskStorage({
@@ -39,6 +39,17 @@ router.post('/create-car', (req, res, next) => {
     }).catch(error => {
         console.log(error);
     })
+});
+
+router.get('/users', (req, res, next) => {
+    user.find({}, 'email isAdmin').then(user => {
+        if (!user) {
+            res.status(404).json({message: "no user found..."});
+        }
+        res.status(200).json(user);
+    }).catch(error => {
+        console.log(error);
+    });
 })
 
 module.exports = router;

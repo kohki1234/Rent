@@ -10,5 +10,10 @@ export class AdminService {
     const carData = {brand, model, power, seats, imgUrl};
     return this.http.post('http://localhost:3000/api/admin/create-car', carData);
   }
+
+  getUsers() {
+    return this.http.get('http://localhost/api/admin/users');
+  }
+
 }
 
