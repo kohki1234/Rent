@@ -5,7 +5,7 @@
     <mat-card>
       <mat-card-title>Create a card</mat-card-title>
       <mat-card-content>
-        <form (submit)="onCreate()" #createForm="ngForm" >
+        <form (submit)="onCreate(createForm)" #createForm="ngForm" >
           <mat-form-field>
             <input matInput
              type="text"

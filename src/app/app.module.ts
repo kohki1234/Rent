@@ -1,3 +1,4 @@
+import { AdminService } from './admin.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
@@ -61,7 +62,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
       {path: 'users', component: AdminUsersComponent}
     ])
   ],
-  providers: [UserService],
+  providers: [UserService, LoginComponent, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
