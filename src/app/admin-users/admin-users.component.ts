@@ -1,5 +1,6 @@
+import { MatTableDataSource, MatPaginator, MatTable } from '@angular/material';
 import { AdminService } from './../admin.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-admin-users',
@@ -8,10 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminUsersComponent implements OnInit {
 
+  displayedColumns = ['email', 'isAdmin', 'edit'];
+  dataSource = new MatTableDataSource();
+  users: any;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild('table') table: MatTable<any>;
+
   constructor(private adminservice: AdminService) { }
 
   ngOnInit() {
-    this.adminservice.getUsers().subscribe();
+    this.adminservice.getUsers().subscribe(res => {
+      const ELEMENT_DATA = [];
+      this.users = res;
+      this.users.forEach(user => {
+        const email = user.email;
+        const isAdmin = user.isAdmin;
+        ELEMENT_DATA.push({email, isAdmin});
+      });
+
+      this.dataSource.data = ELEMENT_DATA;
+      this.dataSource.paginator = this.paginator;
+    });
   }
 
 }

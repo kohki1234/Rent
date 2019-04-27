@@ -12,7 +12,7 @@ export class AdminService {
   }
 
   getUsers() {
-    return this.http.get('http://localhost/api/admin/users');
+    return this.http.get('http://localhost:3000/api/admin/users');
   }
 
 }
