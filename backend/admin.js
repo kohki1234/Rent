@@ -50,6 +50,18 @@ router.get('/users', (req, res, next) => {
     }).catch(error => {
         console.log(error);
     });
+});
+
+router.post('/delete-user', (req, res, next) => {
+    user.deleteOne({email: req.body.email}).then(res1 => {
+        user.find().then(users => {
+            res.status(201).json(users);
+        }).catch(error => {
+            console.log(error);
+        }).catch(error => {
+            console.log(error);
+        })
+    })
 })
 
 module.exports = router;
