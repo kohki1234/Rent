@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class AdminService {
 
   constructor(private http: HttpClient) { }
+  //
 
   createCar(brand: string, model: string, power: string, seats: any, imgUrl: string ) {
     const carData = {brand, model, power, seats, imgUrl};
